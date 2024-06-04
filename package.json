@@ -1,0 +1,45 @@
+{
+  "name": "@husky/format-salary",
+  "version": "0.1.0",
+  "files": [
+    "build"
+  ],
+  "jest": {
+    "moduleNameMapper": {
+      "^@common/(.*)": "<rootDir>/src/common/$1",
+      "^@components/(.*)": "<rootDir>/src/components/$1",
+      "^@utils/(.*)": "<rootDir>/src/common/utils/$1"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "lint-staged": "lint-staged"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4"
+  }
+}
