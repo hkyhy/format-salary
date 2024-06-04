@@ -28,6 +28,12 @@ jobs:
       - name: Get Github token 🏗️
         run: echo $secrets_GITHUB_TOKEN
 
+      - name: Deploy to GH Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+
       - name: Publish Npm
         env:
           NODE_AUTH_TOKEN: ${{secrets.HKYHY_PACKAGE_PUBLISH}}
