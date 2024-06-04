@@ -18,26 +18,10 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-
-      - name: Install 🔧
-        run: npm install --legacy-peer-deps
-
-      - name: Build 🏗️
-        run: npm run build
-
-      - name: Get Github token 🏗️
-        run: echo $secrets_GITHUB_TOKEN
-
-      - name: Deploy to GH Pages 🚀
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-
-      - name: Publish Npm
+      - run: npm i --legacy-peer-deps
+      #      - run: npm run build:lib
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.HKYHY_PACKAGE_PUBLISH}}
-        run: npm publish --access=public
-
-      - name: Sync To Cnpm
-        run: npm i -g cnpm && cnpm sync @hkyhy/format-salary
+      - run: npm i -g cnpm
+      - run: npm i -g cnpm && cnpm sync @hkyhy/format-salary
