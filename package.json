@@ -17,6 +17,7 @@
     ]
   },
   "scripts": {
+    "build": "cross-env COMPONENTS_NAME=format-salary MODULES_DEV_PUBLIC_URL=/ craco build",
     "lint-staged": "lint-staged"
   },
   "eslintConfig": {
