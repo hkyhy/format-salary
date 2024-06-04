@@ -18,4 +18,4 @@ const formatSalary = (salary_begin, salary_end, salaryType, salaryMonth) => {
   }
 };
 
-export default formatSalary;
+module.exports = formatSalary;
