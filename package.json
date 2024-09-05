@@ -1,6 +1,6 @@
 {
   "name": "@hkyhy/format-salary",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A package for npm test",
   "main": "index.js",
   "scripts": {
